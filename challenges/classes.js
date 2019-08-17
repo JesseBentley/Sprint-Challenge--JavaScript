@@ -1,6 +1,6 @@
 // Copy and paste your prototype in here and refactor into class syntax.
 
-class CuboidMaker {
+class CuboidMaker2 {
   constructor(length, width, height) {
     this.length = length;
     this.width = width;
@@ -14,7 +14,7 @@ class CuboidMaker {
   Formula for cuboid volume: length * width * height
 */
 
-CuboidMaker.prototype.volume = function () {
+CuboidMaker2.prototype.volume = function () {
   return length * width * height;
 };
 
@@ -23,19 +23,19 @@ CuboidMaker.prototype.volume = function () {
   Create another method using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
   Formula for cuboid surface area of a cube: 2 * (length * width + length * height + width * height)
 */
-CuboidMaker.prototype.surfaceArea = function () {
-  return length * width + length * height + width * height;
+CuboidMaker2.prototype.surfaceArea = function () {
+  return 2*(length * width + length * height + width * height);
 }
 
 /* == Step 4: Create a new object that uses CuboidMaker ==
   Create a cuboid object that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid.   
 */
-const cuboid = new CuboidMaker(length = 4, width = 5, height = 5);
+const cuboid2 = new CuboidMaker2(length = 4, width = 5, height = 5);
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
-console.log(cuboid.volume()); // 100
-console.log(cuboid.surfaceArea()); // 130
+console.log(cuboid2.volume()); // 100
+console.log(cuboid2.surfaceArea()); // 130
 
 /* Stretch Task:
   Extend the base class CuboidMaker with a sub class called CubeMaker. 
@@ -43,14 +43,14 @@ console.log(cuboid.surfaceArea()); // 130
     Create a new cube object and log out the results of your new cube.
 */
 
-class cubeMaker extends CuboidMaker {
+class cubeMaker2 extends CuboidMaker2 {
   constructor(length) {
     super(length);
     this.surfaceArea = function () { return 6 * Math.pow(length, 2);  }
     this.volume = function () { return Math.pow(length, 3); }
   }
 }
-const cube = new cubeMaker(length = 6);
+const cube = new cubeMaker2(length = 6);
 
 console.log(cube.volume()); // 100
 console.log(cube.surfaceArea()); // 130
