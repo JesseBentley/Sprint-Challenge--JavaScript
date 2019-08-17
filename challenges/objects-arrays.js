@@ -145,6 +145,10 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const lowerPopulation = [];
+for(let i = 0; i < zooAnimals.length; i++)
+  if(zooAnimals[i].population < 5){
+    lowerPopulation.push(zooAnimals[i])
+  }
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
@@ -153,9 +157,12 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 const populationTotal = 0;
+zooAnimals.reduce((sum, sumAnimals) => populationTotal.push(sumAnimals.population))
 console.log(populationTotal);
 
-
+console.log (populationTotal.reduce((sum, num) => {
+  return sum + num
+}))
 /* 
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
